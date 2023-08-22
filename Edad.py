@@ -1,15 +1,21 @@
 from time import localtime
 t = localtime()
-dia = t.tm_mday
-mes = t.tm_mon
-año = t.tm_year
+dia_actual = t.tm_mday
+mes_actual = t.tm_mon
+año_actual = t.tm_year
 
 print("---EDAD---")
 print("Ingrese su fecha de nacimiento")
-dia2 = int(input("Dia: "))
-mes2 = int(input("Mes: "))
-año2 = int(input("Año: "))
+dia_nacimiento = int(input("Dia: "))
+mes_nacimiento = int(input("Mes: "))
+año_nacimiento = int(input("Año: "))
 
-edad = año-año2 - ((mes, dia) < (mes2, dia2))
+edad = año_actual - año_nacimiento - ((mes_actual, dia_actual) < (mes_nacimiento, dia_nacimiento))
+
+if mes_actual < mes_nacimiento or (mes_actual == mes_nacimiento and dia_actual < dia_nacimiento):
+    print("No ha cumplido años aún")
+else:
+    print("Ya cumplió años")
+
 
 print("Su edad es: "+str(edad)+" años")
