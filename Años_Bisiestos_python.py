@@ -1,15 +1,7 @@
 print("---Años Bisiestos---")
-print("Ingrese un año para saber si es bisiesto o no: ")
-año = int(input())
+año = int(input("Ingrese un año para saber si es bisiesto o no: "))
 
-if año >= 1582:
-    if año % 400 == 0:
-        print("El año "+str(año)+" SI es bisiesto")
-    else:
-        print("El año "+str(año)+" NO es bisiesto")
-
+if (año % 4 == 0 and año % 100 != 0) or (año % 100 == 0) and (año % 400 == 0):
+    print("El año "+str(año)+" SI es bisiesto")
 else:
-    if año % 4 == 0:
-        print("El año "+str(año)+" SI es bisiesto")
-    else:
-        print("El año "+str(año)+" NO es bisiesto")
+    print("El año "+str(año)+" NO es bisiesto")
